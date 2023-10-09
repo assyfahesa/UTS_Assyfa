@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Jawaban UTS</title>
+
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.1/dist/leaflet.css"
+        integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+        crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.9.1/dist/leaflet.js"
+         integrity="sha256-NDI0K41gVbWqfkkaHj15IzU7PtMoelkzyKp8TOaFQ3s="
+        crossorigin=""></script>
+
+        <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+	    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+	
+	    <script src="./bundle.js"></script>
+	
+	    <link rel="stylesheet" type="text/css" href="./Leaflet.GraphicScale.min.css">
+	
+	    <script src="./Leaflet.GraphicScale.min.js"></script>
+
+        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        
+        <style>
+            #map {
+            width: 960px;
+            height: 500px;
+            }
+            </style>
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">
+                <span class="d-block d-lg-none">UTS Praktikum SigWeb
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Jawaban UTS Assyfa Hesa Maharani </a></li>
+                </ul>
+            </div>
+        </nav>
+        <!-- Page Content-->
+        <div class="container-fluid p-0">
+            <p><table border="width: 1px;">
+                <tr>
+                    <th rowspan="1">Nama </th>
+                    <th colspan="1">NIM</th>
+                </tr>
+                <tr>
+                    <td>Assyfa Hesa Maharani</td>
+                    <td>20/463302/TK/51294</td>
+                </tr>
+            </table></p>
+                    <h2 class="mb-0">
+                       Rangkuman Materi
+                    </h2>
+                    <ul>
+                        <li><h4><b>Minggu 1 - Minggu 7</b></li></h4><p>
+                        <p  align ="justify"> Di Departemen Teknik Geodesi sendiri <em><b><a href="https://geodesi.ugm.ac.id/apa-itu-geodesi/">(klik link ini untuk menuju website resmi Teknik Geodesi)</a></b></em> terdapat salah satu mata kuliah yaitu SigWeb. 
+                            Praktikum SigWeb secara keseluruhan membahas mengenai pemrograman menggunakan html, css, dan javascript. Dalam praktikum ini diajarkan cara menggunakan html, css, dan js sehingga menghasilkan suatu output tertentu. 
+                            Pada minggu-minggu awal masih berupa pengenalan mengenai Sistem Informasi Geografis berbasis web. Sedangkan mulai minggu keempat dikenalkan berupa bootstrap. Di Minggu ke-5 dikenalkan berupa leaflet dan GeoJson.
+                            Leaflet merupakan library atau kumpulan fungsi berbasis Javascript yang digunakan untuk menampilkan peta interaktif pada halaman web.GeoJSON dapat digunakan untuk menampilkan data spasial pada
+                            media web. LeafletJS dapat memanggil layer GeoJSON sebagai variable dan ditambahkan pada peta. Ouput hingga minggu ke -7 berupa leaflet yang memuat informasi berupa titik atau poligon dalam sebuah peta.</p>
+                    </ul>
+                <div>
+                    
+                    <span><center><h3 style="color:rgb(255, 255, 255);"><b>Peta UGM</b></h3></center></span>
+
+                 <!--menambahkan komponen Map --> 
+                 <center>
+                <div id="map"></div>
+                
+                <script>
+                  var map = L.map('map',{
+                center: [-7.7714, 110.3775],
+                zoom: 12
+                    });
+
+                    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+                        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
+                    
+    var marker = L.marker([-7.76982, 110.37793]).
+    bindPopup('<center><h2>GSP</h2><justify><a href="https://residence.ugm.ac.id/gsp/">Grha Sabha Pramana (GSP) UGM</a><br><br><img src="https://residence.ugm.ac.id/wp-content/uploads/sites/1094/2023/05/gedung-gsp-300x152.jpg" width="150px" height="100px"></center>').addTo(map);  
+    
+        var marker = L.marker([-7.76387, 110.37266]).
+    bindPopup('<center><h2>Teknik Geodesi</h2><justify><a href="https://geodesi.ugm.ac.id/apa-itu-geodesi/">Teknik Geodesi UGM</a><br><br><img src="https://geodesi.ugm.ac.id/wp-content/uploads/sites/695/2017/08/SAVE_20170829_134406.jpeg" width="150px" height="100px"></center>').addTo(map);
+        
+        var marker = L.marker([-7.77010, 110.37969]).
+    bindPopup('<center><h2>FEB</h2><justify><a href="https://feb.ugm.ac.id/id">FEB</a><br><br><img src="https://feb.ugm.ac.id/images/2020/feb-mainentrance.jpg" width="150px" height="100px"></center>').addTo(map);
+
+
+
+                </script>
+
+                    <p><span><p>Ketik <b>Selesai</b> jika sudah ingin submit</p></span></p>
+                    <form action="#" method="get" id="form">
+                        <label>Nama:</label>
+                        <input type="text" name="nama" placeholder="Masukkan Nama Anda"/><br>
+                        <label>Password:</label>
+                        <input type="text" name="password" placeholder="Masukkan Password Anda"/><br>
+                        <input onclick="login()" type="button" value="Klik" class="tombol">
+                    </form>
+                    <script>
+                        function login()
+                        {
+                            var nama = document.forms["form"]["nama"].value;
+                            var password = document.forms["form"]["password"].value;
+                                if (nama == "") 
+                                {
+                                    alert("Isikan nama Anda!");
+                                    return false;
+                                }
+                                if (password == "Selesai") 
+                                {
+                                    alert("Anda berhasil Login!");
+                                }
+                                else
+                                {
+                                    alert("Password Salah!");
+                                    return false;
+                                }
+                        }
+                    </script>
+                </div>
+            </section>
+        </div>
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
